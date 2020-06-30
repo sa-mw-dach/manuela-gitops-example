@@ -6,7 +6,7 @@ resources:
 - line-dashboard-namespace.yaml
 patchesStrategicMerge:
 - line-dashboard-route.yaml
-- line-dashboard-configmap.yaml
+
 bases:
 #- github.com/sa-mw-dach/manuela-gitops/config/templates/manuela/line-dashboard
 - ../../../templates/manuela-openshift-prod/line-dashboard
@@ -14,3 +14,9 @@ bases:
 images:
 - name: line-dashboard
   newName: image-registry.openshift-image-registry.svc:5000/manuela-prod-line-dashboard/line-dashboard    
+
+configMapGenerator:
+- name: line-dashboard-configmap
+  behavior: replace
+  files:
+  - config.json=line-dashboard-configmap-config.json
