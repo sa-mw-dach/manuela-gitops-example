@@ -2,10 +2,12 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   name: amq-broker
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
-  channel: alpha
-  installPlanApproval: Automatic
+  channel: current
+  installPlanApproval: Manual
   name: amq-broker
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: amq-broker-operator.v0.9.1
+  startingCSV: amq-broker-operator.v0.15.0

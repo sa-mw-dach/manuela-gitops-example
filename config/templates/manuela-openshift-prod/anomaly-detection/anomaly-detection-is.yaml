@@ -1,0 +1,41 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: anomaly-detection
+spec:
+  tags:
+  - name: 0.3.2-5
+    from:
+      kind: DockerImage
+      name: quay.io/manuela/iot-anomaly-detection:0.3.2-5
+    importPolicy: {}
+    referencePolicy:
+      type: Local
+  - name: 0.3.2-6
+    from:
+      kind: DockerImage
+      name: quay.io/manuela/iot-anomaly-detection:0.3.2-6
+    importPolicy: {}
+    referencePolicy:
+      type: Local
+  - name: 0.3.2-7
+    from:
+      kind: DockerImage
+      name: quay.io/manuela/iot-anomaly-detection:0.3.2-7
+    importPolicy: {}
+    referencePolicy:
+      type: Local
+  - name: 0.3.2-8
+    from:
+      kind: DockerImage
+      name: quay.io/manuela/iot-anomaly-detection:0.3.2-8
+    importPolicy: {}
+    referencePolicy:
+      type: Local
+  - name: 0.3.2-9
+    from:
+      kind: DockerImage
+      name: quay.io/manuela/iot-anomaly-detection:0.3.2-9
+    importPolicy: {}
+    referencePolicy:
+      type: Local
